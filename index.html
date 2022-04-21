@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="User Portal/Styles/homePageStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/3dc00a07e8.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="container">
+       
+
+        <div class="main_body">
+            <div class="side_menu">
+              <div class="wrapper">
+                <div class="sidebar">
+                  <div class="profile">
+                    <img src="../../man.png" alt="profile_picture" id = "myImageId">
+                    <h3 id="first_name">John Doe</h3>
+                    <p id="designation">Manager</p>
+                  </div>
+                  <hr/>
+                  <ul>
+                    <li class="sidebar_icon active" id="sidebar_icon_home">
+                      <a href="" >
+                        <span class="icon"><i class="fa-solid fa-home"></i></span>
+                        <span class="item">Home</span>
+                      </a>
+                    </li>
+
+
+                    <li class="sidebar_icon" id="sidebar_icon_aboutMe">
+                      <a href="#">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span class="item">About Me</span>
+                      </a>
+                    </li>
+                    
+                    <li class="sidebar_icon" id="sidebar_icon_myPay">
+                      <a href="#">
+                        <span class="icon"><i class="fa-solid fa-sack-dollar"></i></span>
+                        <span class="item">My Pay</span>
+                      </a>
+                    </li>
+
+                    <li class="sidebar_icon" id="sidebar_icon_attendence">
+                      <a href="#">
+                        <span class="icon"><i class="fa-solid fa-calendar"></i></span>
+                        <span class="item">Attendence</span>
+                      </a>
+                    </li>
+                    <li class="sidebar_icon" id="sidebar_icon_myTime"> 
+                      <a href="#">
+                        <span class="icon"><i class="fa-solid fa-hourglass-start"></i></span>
+                        <span class="item">My Time</span>
+                      </a>
+                    </li>
+                    <li class="sidebar_icon">
+                      <a href="#">
+                        <span class="icon"><i class="fa-solid fa-building-columns"></i></span>
+                        <span class="item">Bank </span>
+                      </a>
+                    </li>
+                    
+                    
+                  </ul>
+                </div>
+                <div class="section">
+                  <div class="top_navbar">
+                    <div class="hamburger">
+                      <a href="#">
+                        <i class="fas fa-bars"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="container">
+
+                    <div class="inner_section">
+                      <section id= "home_content" style="display: flex;">
+                        <div class="edit_container">
+                          <div class="edit_card">
+                              <div class="edit_info"> <div  class="profile_title">Home</div> <button id="savebutton" click = "function()">edit</button> </div>
+                              <div class="edit_forms">
+                                
+                                <div class="first_row">
+                                    <div class="first_row_block">
+                                      <div class="first_row_details" id="first_row_detail">
+                                        <div class="edit_inputs"> <span >First Name</span> <input  type="text" readonly value="John" id="edited_first_name"> </div>
+                                        <div class="edit_inputs"> <span >Last Name</span> <input id="edited_last_name" type="text" readonly value="Doe"> </div>
+                                      </div>
+                                      <div class="first_row_details">
+                                        <div class="edit_inputs"> <span>DOB</span> <input type="text" readonly value="John"> </div>
+                                        <div class="edit_inputs"> <span>Phone Number</span> <input type="text" readonly value="Doe"> </div>
+                                      </div>
+    
+                                      <div class="first_row_details" id="first_row_details">
+                                        <div class="edit_inputs"> <span>Email</span> <input type="text" readonly value="john.doe12@gmail.com"> </div>
+                                        <div class="edit_inputs"> <span>UserName</span> <input type="text" readonly value="johndoe12"> </div>
+                                      </div>
+                                      <div class="first_row_details">
+                                        <div class="edit_inputs"> <span>Country</span> <input type="text" readonly value="United States"> </div>
+                                        <div class="edit_inputs"> <span>Country</span> <input type="text" readonly value="United States"> </div>
+                                      
+                                      </div>
+      
+                                    </div>
+                                    
+                                    <div class="profile_photo">
+                                        
+                                        <div class="inner_container_profile">
+                                            <div class="inner_profile_photo">
+                                              
+                                              <div class="profile-pic">
+                                                <label class="-label" for="file" >
+                                                  <span class="glyphicon glyphicon-camera"></span>
+                                                  <span>Change Image</span>
+                                                </label>
+                                                <input id="file" type="file" readonly onchange="loadFile(event)" style=""  />
+                                                <img src="../../man.png" id="output" width="200" />
+                                              </div>
+                                               
+                                            </div>
+                                        </div>
+                                      </div>
+                                </div>
+                                
+                                  
+                                </div>
+                                  
+                                  
+                              </div>
+                          </div>
+                      </section>
+                      <section id= 'second' style="display: none;">
+                        <div class="edit_container">
+                          <div class="edit_card">
+                              <div class="edit_info"> <div  class="profile_title">Personal Details</div> <button id="savebutton" click = "function()">edit</button> </div>
+                              <div class="edit_forms">
+                                
+                                <div class="first_row">
+                                    <div class="first_row_block">
+                                      <div class="first_row_details" id="first_row_detail">
+                                        <div class="edit_inputs"> <span >First Name</span> <input  type="text" readonly value="John" id="edited_first_name"> </div>
+                                        <div class="edit_inputs"> <span >Last Name</span> <input id="edited_last_name" type="text" readonly value="Doe"> </div>
+                                      </div>
+                                      <div class="first_row_details">
+                                        <div class="edit_inputs"> <span>DOB</span> <input type="text" readonly value="John"> </div>
+                                        <div class="edit_inputs"> <span>Phone Number</span> <input type="text" readonly value="Doe"> </div>
+                                      </div>
+    
+                                      <div class="first_row_details" id="first_row_details">
+                                        <div class="edit_inputs"> <span>Email</span> <input type="text" readonly value="john.doe12@gmail.com"> </div>
+                                        <div class="edit_inputs"> <span>UserName</span> <input type="text" readonly value="johndoe12"> </div>
+                                      </div>
+                                      <div class="first_row_details">
+                                        <div class="edit_inputs"> <span>Country</span> <input type="text" readonly value="United States"> </div>
+                                        <div class="edit_inputs"> <span>Country</span> <input type="text" readonly value="United States"> </div>
+                                      
+                                      </div>
+      
+                                    </div>
+                                    
+                                    <div class="profile_photo">
+                                        
+                                        <div class="inner_container_profile">
+                                            <div class="inner_profile_photo">
+                                              
+                                              <div class="profile-pic">
+                                                <label class="-label" for="file" >
+                                                  <span class="glyphicon glyphicon-camera"></span>
+                                                  <span>Change Image</span>
+                                                </label>
+                                                <input id="file" type="file" readonly onchange="loadFile(event)" style=""  />
+                                                <img src="../../man.png" id="output" width="200" />
+                                              </div>
+                                               
+                                            </div>
+                                        </div>
+                                      </div>
+                                </div>
+                                
+                                  
+                                </div>
+                                  
+                                  
+                              </div>
+                          </div>
+                      </section>
+                  </div>
+                </div>
+              </div>
+            <!-- <div class="details">
+
+
+               <div class="inner_container">
+                 
+                  </div>
+                    <section id= 'second'>
+                      <h1>Second</h1>
+                    </section>
+
+                 </div> -->
+                
+                  
+                 
+               </div>
+            </div>
+    
+        </div>
+        
+    </div>
+
+    
+
+
+<script>
+      var hamburger = document.querySelector(".hamburger");
+      hamburger.addEventListener("click", function () {
+        document.querySelector("body").classList.toggle("active");
+      });
+
+      var fname = document.getElementById("edited_first_name").value;
+      var lname = document.getElementById("edited_last_name").value;
+            
+      document.getElementById("first_name").innerHTML = fname + " "  + lname ;
+
+      
+
+      //Edit and Save button
+      var savebutton = document.getElementById('savebutton');
+  
+      var readonly = true;
+      var inputs = document.querySelectorAll('input[type="text"]');
+      var inputFile = document.querySelectorAll('#file');
+      savebutton.addEventListener('click',function(){
+      
+        for (var i=0; i<inputs.length; i++) { 
+          inputs[i].toggleAttribute('readonly');
+        }; 
+        // inputFile.setAttribute(in)
+        if (savebutton.innerHTML=="edit" ) { 
+            savebutton.innerHTML="save" ;
+            savebutton.style.background = 'green';
+            const upload= document.getElementById('file')
+            const value= upload.setAttribute('type','file')
+        }else { 
+          savebutton.innerHTML="edit" ; 
+          savebutton.style.background = 'black';
+          fname = document.getElementById("edited_first_name").value;
+          lname = document.getElementById("edited_last_name").value;
+          document.getElementById("first_name").innerHTML = fname + " "  + lname ;  
+          
+          const upload= document.getElementById('file')
+          const value= upload.setAttribute('type','none')
+
+          const hover=document.getElementsByClassName('-label')
+          
+          } 
+           
+      });
+      
+      // Image upload
+      
+          var loadFile = function (event) {
+
+          var image = document.getElementById("output");
+          image.src = URL.createObjectURL(event.target.files[0]);
+          var photo = document.getElementById("output").getAttribute("src")
+          
+         
+          //document.getElementById("profile_picture").src = photo;
+          //Image change
+          //document.getElementById("myImageId").src= photo;
+        };
+
+        //selected nav bar high-lighting
+        var icons = document.querySelectorAll(".sidebar_icon");
+        Array.from(icons).forEach(item => {
+            item.addEventListener("click", () => {
+              var selected = document.getElementsByClassName("active");
+              selected[0].className = selected[0].className.replace(" active", "");
+              item.className += " active";
+              console.log(selected[0].id)
+              var prev = "home_content"
+              if(selected[0].id == "sidebar_icon_home")
+              {
+                 prev = "home_content" 
+                
+              }
+              console.log(prev);
+              
+
+              if(selected[0].id == "sidebar_icon_aboutMe" || selected[0].id == "sidebar_icon_aboutMe1")
+              {
+                 document.getElementById(prev).style.display = "none";
+                document.getElementById("second").style.display="flex";
+              }
+            });
+        });
+
+        // For image
+        document.getElementById("myImageId").src=document.getElementById("output").src;
+        
+
+  </script>
+  
+  </body>
+  
+</html>
+
