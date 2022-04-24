@@ -7,26 +7,25 @@
 }
 body{
   background: #66c5b2;
-  overflow: hidden;
+  
 }
 ::selection{
   background: rgba(26,188,156,0.3);
 }
 .container{
-  max-width: 440px;
+ 
   padding: 0 20px;
   margin: 170px auto;
 }
 
 .inner_container{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  width: 1000px;
-  height: 400px;
+  
+ 
   gap: 50px;
 
 }
+
+
 
 .headings{
     color: red;
@@ -35,28 +34,32 @@ body{
 }
 
 .container_robot{
-  
-  padding: 0 10px;
   width: fit-content;
+  padding: 0 10px;
+ 
   margin: 15px auto;
 }
 
-.left_top, .right_top{
-  max-width: 400px;
-  padding: 0 10px;
-  margin: 15px auto;
+.robot_container{
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  width: inherit;
+}
+
+.left_top{
+  
+  margin: 30px;
   
 }
 .wrapper{
-  width: 100%;
-  height: 550px;
+  
   background: #fff;
-  margin-top: 50px;
   border-radius: 5px;
   box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
 }
 .wrapper .title{
-  height: 90px;
+  height: 70px;
   background: #16a085;
   border-radius: 5px 5px 0 0;
   color: #fff;
@@ -67,10 +70,12 @@ body{
   justify-content: center;
 }
 .wrapper form{
-  padding: 0px 25px;
+
+  padding:25px;
 }
 .wrapper form .row{
   height: 45px;
+  width: 300px;
   margin-bottom: 15px;
   position: relative;
 }
@@ -83,6 +88,14 @@ body{
   border: 1px solid lightgrey;
   font-size: 16px;
   transition: all 0.3s ease;
+  
+  
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 form .row input:focus{
   border-color: #16a085;
@@ -136,7 +149,13 @@ form .button input:hover{
   color: #16a085;
   text-decoration: none;
 }
+
 form .signup-link a:hover{
   text-decoration: underline;
 }
+
+#row_button {
+  width: inherit;
+}
+
 

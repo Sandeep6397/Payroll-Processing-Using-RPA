@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+
+    <link rel="stylesheet" href="../../Admin Portal/Styles/Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        <form id="form" action="#">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input id="email" name="email"  type="text" placeholder="Email or ID" >
+            <div class="error"></div>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input id="password" type="password" placeholder="Password" >
+            <div class="error"></div>
+          </div>
+          <div class="pass"><a href="../Front end/forgotPassword.html">Forgot password?</a></div>
+          <div class="row button">
+            <input  type="submit" value="Login">
+          </div>
+
+          
+        </form>
+      </div>
+    </div>
+
+  </body>
+  <script type="text/javascript">
+    const form = document.getElementById('form');
+
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    validateInputs();
+});
+
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success')
+}
+
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+};
+
+const isValidEmail = email => {
+    // const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const  re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@mite+(?:\.[a-zA-Z0-9-]+)*$/;
+    
+    return re.test(String(email).toLowerCase());
+}
+
+const validateInputs = () => {
+
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
+
+    if(emailValue === '') {
+        setError(email, 'Email or ID is required');
+    } else if (!isValidEmail(emailValue)) {
+        setError(email, 'Provide a valid email address');
+    } else {
+        setSuccess(email);
+    }
+
+    if(passwordValue === '') {
+        setError(password, 'Password is required');
+    } else if (passwordValue.length < 8 ) {
+        setError(password, 'Password must be at least 8 character.')
+    } else {
+        setSuccess(password);
+    }
+
+  
+
+};
+
+      
+
+  </script>
+</html>

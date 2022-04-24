@@ -230,17 +230,40 @@ body.active .edit_card .edit_inputs input {
   width: 330px;
   font-size: 18px;
   font-weight: 700;
+  color: #000;
+  box-shadow: none;
+  border: 1px solid green;
+  outline: none
+}
+
+.edit_card  select{
+  height: 40px;
+  width: 330px;
+  font-size: 18px;
+  color: #7f7f7f;
+  font-weight: 700;
   box-shadow: none;
   border: 1px solid green;
   outline: none
 }
 
 .edit_card .edit_inputs input[type="text"][readonly] {
-  border: 2px solid rgba(0, 0, 0, 0)
+  border: 2px solid rgba(0, 0, 0, 0);
+  color: #7f7f7f;
+}
+
+#slct[disabled]{
+  border: 2px solid rgba(0, 0, 0, 0);
+  color: #000;
+ 
 }
 
 .profile_title{
 padding: 7px;
+}
+
+.bank_select{
+  width: 20px;
 }
 
 .first_row{
@@ -263,7 +286,10 @@ justify-content: space-between;
 }
 
 .first_row_bank{
-  margin-left: 50px;
+  margin-left: 80px;
+
+}
+.first_row_myTime{
 
 }
 
@@ -319,11 +345,11 @@ margin-left: 40px;
 
 select {
   appearance: none;
-  font-weight: 500;
+  font-weight: 700;
   height: 40px;
   width: 330px;
   color: black;
-  cursor: pointer;
+  cursor: text;
   border: none;
   
 }
@@ -546,3 +572,123 @@ table tbody tr {
   margin: 20px;
 }
 
+
+
+
+
+
+/* Calender */
+
+
+
+html {
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #444;
+}
+
+
+
+.wrapper_calender {
+  margin: 15px auto;
+  max-width: 1100px;
+}
+
+.container-calendar {
+  background: #ffffff;
+
+  max-width: 650px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.button-container-calendar button {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #00a2b7;
+  color: #fff;
+  border: 1px solid #0aa2b5;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.table-calendar {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-calendar td,
+.table-calendar th {
+  padding: 5px;
+  border: 1px solid #e2e2e2;
+  text-align: center;
+  vertical-align: top;
+}
+
+.date-picker.selected {
+  font-weight: bold;
+  background-color: rgb(53, 241, 53);
+  outline: 1px solid red;
+}
+
+.date-picker.selected span {
+  
+}
+
+/* sunday */
+.date-picker:nth-child(1) {
+  color: red;
+}
+
+/* friday */
+.date-picker:nth-child(6) {
+  color: green;
+}
+
+#monthAndYear {
+  text-align: center;
+  margin-top: 0;
+}
+
+.button-container-calendar {
+  position: relative;
+  margin-bottom: 1em;
+  overflow: hidden;
+  clear: both;
+}
+
+#previous {
+  float: left;
+}
+
+#next {
+  float: right;
+}
+
+.footer-container-calendar {
+  text-align: center;
+  margin-top: 1em;
+  border-top: 1px solid #dadada;
+  padding: 10px 0;
+}
+
+.footer-container-calendar select {
+  text-align: center;
+  cursor: pointer;
+  width: 100px;
+  display: inline-block;
+  zoom: 1;
+  background: #ffffff;
+  color: #585858;
+  border: 1px solid #bfc5c5;
+  border-radius: 3px;
+  padding: 5px 1em;
+}
+
+.calender_text{
+  display: contents;
+  
+
+}
