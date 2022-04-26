@@ -192,8 +192,8 @@ body.active .edit_card .edit_inputs input {
 }
 
 .edit_card .edit_info button {
-  height: 30px;
-  width: 80px;
+  padding: 1px 25px;
+  width: fit-content;
   border: none;
   color: #fff;
   border-radius: 4px;
@@ -202,10 +202,19 @@ body.active .edit_card .edit_inputs input {
   text-transform: uppercase
 }
 
+#status_button:active{  
+  box-shadow: 0 2px #aec3c4;
+  transform: translateY(2px);
+
+}
+
 .edit_card .edit_forms {
   padding: 15px;
  
   
+}
+ .edit_forms_attendence{
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .edit_forms_myPay{
@@ -262,10 +271,6 @@ body.active .edit_card .edit_inputs input {
 padding: 7px;
 }
 
-.bank_select{
-  width: 20px;
-}
-
 .first_row{
 width: inherit;
 display: flex;
@@ -274,7 +279,7 @@ justify-content: space-between;
 
 .first_row_attendence{
   width: inherit;
-  display: grid ;
+  
   
 }
 
@@ -286,7 +291,7 @@ justify-content: space-between;
 }
 
 .first_row_bank{
-  margin-left: 80px;
+  margin-left: 50px;
 
 }
 .first_row_myTime{
@@ -343,6 +348,16 @@ margin-left: 40px;
   font-weight: 800;
 }
 
+/* .edit_forms_attendence .first_row_attendence_container{
+
+  padding: 20px 20px 20px 70px;
+  background-color: whitesmoke;
+} */
+
+.apply_attendence_container{
+  padding: 20px 20px 20px 70px;
+}
+
 select {
   appearance: none;
   font-weight: 700;
@@ -353,6 +368,93 @@ select {
   border: none;
   
 }
+
+.select select{
+  padding-left: 15px;
+  appearance: none;
+  font-size: large;
+  font-weight: 400;
+  height: 35px;
+  width: 330px;
+  color: #000;
+  cursor: text;
+  border-radius: 5px;
+  border: 1px solid black;
+  
+ 
+  text-indent: 1px;
+  
+}
+
+select:focus{
+  outline: none !important;
+  border-color: #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.leave_input input{
+  background-color: white;
+  margin-top: 5px;
+  padding-left: 15px;
+  font-size: large;
+  font-weight: 400;
+  height: 35px;
+  width: 330px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  
+}
+
+.leave_input_date input{
+  background-color: white;
+  margin-top: 5px;
+  padding-left: 15px;
+  font-size: large;
+  font-weight: 400;
+  height: 35px;
+  width: 200px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+}
+
+.leave_input input:focus{
+  outline: none !important;
+  border-color: #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.leave_inpu_date input:focus{
+  outline: none !important;
+  border-color: #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+textarea{
+  margin-top: 5px;
+  padding-left: 5px;
+  min-width: 330px;
+  min-height: 50px;
+  max-height: 150px;
+  max-width: 700px;
+  border: 0.5px solid black;
+}
+
+textarea:focus { 
+  outline: none !important;
+  border-color: #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+.apply_attendence_row{
+  
+  padding-top: 10px;
+}
+
+#apply_attendence_row{
+  display: flex;
+  gap: 190px;
+}
+
+
 
 .dropdown {
   font-size: 18px;
@@ -692,3 +794,80 @@ html {
   
 
 }
+
+.apply_leave_button{
+  color: white;
+  font-weight: 300;
+  font-size: large;
+	
+  background-color: rgb(213 86 86);
+  padding: 10px 50px;
+  border: 2px solid #c5c0bf;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.apply_leave_button:active {
+  background-color: rgb(197, 67, 67);
+  box-shadow: 0 2px #aec3c4;
+  transform: translateY(2px);
+}
+
+.apply_leave{
+  padding-top: 30px;
+  text-align: center;
+}
+
+
+
+
+.attendence_submit{
+  color: white;
+  font-weight: 300;
+  font-size: large;
+  background-color: rgb(51, 51, 246);
+  padding: 10px 50px;
+  border: 2px solid #c5c0bf;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.attendence_cancel{
+  color: white;
+  font-weight: 300;
+  font-size: large;
+  background-color: rgb(51, 51, 246);
+  padding: 10px 50px;
+  border: 2px solid #c5c0bf;
+  cursor: pointer;
+  border-radius: 5px; 
+}
+
+.attendence_submit:active, .attendence_cancel:active {
+  box-shadow: 0 2px #aec3c4;
+  transform: translateY(2px);
+}
+
+
+.apply_attendence_row_buttons{
+  margin-top: 10px;
+  gap: 30px;
+  display:  flex;
+  justify-content: center;
+}
+
+.apply_date{
+  width: fit-content;
+}
+
+
+
+
+
+
+
+
+
+
+
