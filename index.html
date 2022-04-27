@@ -78,8 +78,7 @@
 
                     <div class="inner_section">
 
-
-
+                    
                       <section id= "aboutMe_content" style="display: contents;">
                         <div class="edit_container">
                           <div class="edit_card">
@@ -357,7 +356,7 @@
                                         </div>
                                         
 
-                                        <div id="first_row_attendence_container1" class="first_row_attendence_container" style="display: none; ">
+                                        <div  class="first_row_attendence_container" id="first_row_attendence_container1" style="display: none; ">
                                             <div class="apply_attendence_container">
                                               <div class="apply_attendence_row">
 
@@ -611,12 +610,7 @@
 
 
                                             </div>
-
-                                            
-                                            
-          
-          
-                                            
+    
                                           </div>
                                 
                                   
@@ -698,38 +692,57 @@
                               <div class="edit_forms">
                                 
                                 <div class="first_row_bank">
+
+                                  
                                     <div class="first_row_block">
-                                      <div class="first_row_details_bank" id="first_row_details_bank">
-                                        <div class="edit_inputs"> <span >Bank Name</span> <input  type="text" readonly value="John" id="edited_first_name"> </div>
-                                        <div class="edit_inputs"> <span >Branch Name</span> <input id="edited_last_name" type="text" readonly value="Doe"> </div>
-                                      </div>
+
+                                      <!-- <div class="first_row_details_bank">
+                                        <div>
+                                        
+                                          <div class="edit_inputs_bank_name"> <span>Account Type</span> </div>
+                                          <select class="dropdown" name="slct" id="slct" disabled style="appearance: none;">
+                                            
+                                            <option value="1"><span> Salary Account</span></option>
+                                            <option value="2"><span>Savings Account</span></option>
+                                            <option value="3"><span>Fixed Deposit Account</span></option>
+                                            <option value="4"><span>Recurring Deposit Account</span></option>
+                                            <option value="5"><span>NRI Accounts</span></option>
+                                            
+
+
+                                            
+                                          </select>
+                                        </div>
+                                        <div class="edit_inputs"> <span>Account Number</span> <input type="text" readonly value="543623910312"> </div>
+                                      </div> -->
+                                      
                                       <div class="first_row_details_bank">
-                                        <div class="edit_inputs"> <span>Account Number</span> <input type="text" readonly value="John"> </div>
-                                        <div class="edit_inputs"> <span>IFSC Code</span> <input type="text" readonly value="Doe"> </div>
+                                        <div>
+                                        
+                                          <div class="edit_inputs_bank_name"> <span>Bank Name</span> </div>
+                                          <select class="dropdown" name="slct" id="slct" disabled style="appearance: none;">
+                                            
+                                            <option value="1"><span> HDFC Bank</span></option>
+                                            <option value="2"><span>SBI</span></option>
+                                            <option value="3"><span>Union Bank</span></option>
+                                            
+                                            
+                                          </select>
+                                        </div>
+                                       
+                                        <div class="edit_inputs"> <span >Branch Name</span> <input id="edited_last_name" type="text" readonly value="Doe"> </div>
+                                      
                                       </div>
+                          
+                                      
     
                                       <div class="first_row_details_bank" id="first_row_details_bank">
                                         <div class="edit_inputs"> <span>Address</span> <input type="text" readonly value="john.doe12@gmail.com"> </div>
                                         <div class="edit_inputs"> <span>UserName</span> <input type="text" readonly value="johndoe12"> </div>
                                       </div>
-                                      <div class="first_row_details_bank">
-                                        <div>
-                                        
-                                          <div class="edit_inputs"> <span>Email</span> </div>
-                                          <select class="dropdown" name="slct" id="slct" disabled >
-                                            <option> <span>Computer Science Subjects</span></option>
-                                            <option value="1"><span> Operating System</span></option>
-                                            <option value="2"><span>Computer Networks</span></option>
-                                            <option value="3"><span>Data Structure</span></option>
-                                            <option value="4"><span>Algorithm</span></option>
-                                            <option value="5"><span>C programming</span></option>
-                                            
-                                          </select>
-                                        </div>
-                                       
-                                        <div class="edit_inputs"> <span>Country</span> <input type="text" readonly value="United States"> </div>
                                       
-                                      </div>
+                                      <div class="edit_inputs"> <span>IFSC Code</span> <input type="text" readonly value="UNIB9054789"> </div>
+                                      
       
                                     </div>
                                     
@@ -842,6 +855,8 @@
           bank_savebutton.style.background = 'green';
           document.getElementById("slct").toggleAttribute("disabled")
           
+          document.getElementById("slct").style.appearance = "auto"
+          bank_edit_status = true
 
            
 
@@ -851,10 +866,12 @@
           document.getElementById("slct").toggleAttribute("disabled")
           fname = document.getElementById("edited_first_name").value;
           lname = document.getElementById("edited_last_name").value;
-   
+          document.getElementById("slct").style.appearance = "none"
+          bank_edit_status = false
           } 
           document.getElementById("slct").setAttribute("slct","disabled")
-          bank_edit_status = false
+          
+          
            
       });
 
