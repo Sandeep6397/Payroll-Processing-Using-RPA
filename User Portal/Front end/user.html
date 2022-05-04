@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Portal</title>
-    <link rel="stylesheet" href="../Styles/homePageStyle.css">
+    <link rel="stylesheet" href="../Styles/userPageStyle.css">
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <script src="https://kit.fontawesome.com/3dc00a07e8.js" crossorigin="anonymous"></script>
@@ -62,6 +62,13 @@
                         <span class="item">Bank </span>
                       </a>
                     </li>
+
+                    <li class="sidebar_icon" id="sidebar_icon_request">
+                      <a href="#">
+                        <span class="icon"><i class=""></i></span>
+                        <span class="item">Request </span>
+                      </a>
+                    </li>
                     
                     
                   </ul>
@@ -77,6 +84,10 @@
                   <div class="container">
 
                     <div class="inner_section">
+
+
+                              
+                             
 
                     
                       <section id= "aboutMe_content" style="display: contents;">
@@ -695,26 +706,6 @@
 
                                   
                                     <div class="first_row_block">
-
-                                      <!-- <div class="first_row_details_bank">
-                                        <div>
-                                        
-                                          <div class="edit_inputs_bank_name"> <span>Account Type</span> </div>
-                                          <select class="dropdown" name="slct" id="slct" disabled style="appearance: none;">
-                                            
-                                            <option value="1"><span> Salary Account</span></option>
-                                            <option value="2"><span>Savings Account</span></option>
-                                            <option value="3"><span>Fixed Deposit Account</span></option>
-                                            <option value="4"><span>Recurring Deposit Account</span></option>
-                                            <option value="5"><span>NRI Accounts</span></option>
-                                            
-
-
-                                            
-                                          </select>
-                                        </div>
-                                        <div class="edit_inputs"> <span>Account Number</span> <input type="text" readonly value="543623910312"> </div>
-                                      </div> -->
                                       
                                       <div class="first_row_details_bank">
                                         <div>
@@ -730,7 +721,18 @@
                                           </select>
                                         </div>
                                        
-                                        <div class="edit_inputs"> <span >Branch Name</span> <input id="edited_last_name" type="text" readonly value="Doe"> </div>
+                                        <div>
+                                        
+                                        <div class="edit_inputs_bank_name"> <span>Account Type</span> </div>
+                                          <select class="dropdown" name="slct" id="slct_type" disabled style="appearance: none;">
+                                            <option value="1"><span>Salary Account</span></option>
+                                            <option value="2"><span> Saving Account</span></option>
+                                            <option value="3"><span>Current Account</span></option>
+                                            
+                                            
+                                            
+                                          </select>
+                                        </div>
                                       
                                       </div>
                           
@@ -758,6 +760,195 @@
                     </section>
 
 
+
+                    <section id= "request_content" style="display: contents;">
+                      <div class="edit_container">
+                        <div class="edit_card">
+                            <div class="edit_info"> 
+                              <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">Attendence Requests</div> 
+                              
+                            </div>
+                            <div class="edit_forms">
+                              
+                              <div class="first_row_bank_appove">
+
+                                <table class="styled-table">
+                                  <thead>
+                                      <tr>
+                                          <th>NO.</th>
+                                          <th>Name</th>
+                                          <th>FROM</th>
+                                          <th>TO</th>
+                                          <th>LEAVE TYPE</th>
+                                          <th>FULL/HALF DAY</th>
+                                          <th>PREVIEW</th>
+                                          
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Mr.Durga</td>
+                                              <td>01/12/2021</td>
+                                              <td>03/12/2021</td>
+                                              <td>Floating Leave</td>
+                                              <td>Full</td>
+                                              <td><button class="preview_button" onclick="open_model()">Preview</button></td>
+                                          </tr>
+                                          <tr>
+                                            <td>2</td>
+                                            <td>Mr.Durga</td>
+                                            <td>01/12/2021</td>
+                                            <td>03/12/2021</td>
+                                            <td>Floating Leave</td>
+                                            <td>Full</td>
+                                            <td><button class="preview_button">Preview</button></td>
+                                          </tr>
+                                             
+                                            <tr>
+                                              <td>3</td>
+                                              <td>Mr.Durga</td>
+                                              <td>01/12/2021</td>
+                                              <td>03/12/2021</td>
+                                              <td>Floating Leave</td>
+                                              <td>Full</td>
+                                              <td><button class="preview_button">Preview</button></td>
+                                            </tr>
+                                              
+                                
+                                      
+                                    </tbody>
+                                </table>
+                                
+                              
+                                  
+                                  
+                              </div>
+                              
+                                
+                              </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id= "approve_atendence_request" style="display: contents;">
+                      <div class="edit_container">
+                        <div class="edit_card">
+                            <div class="edit_info"> 
+                              <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">Attendence Requests</div> 
+                              
+                            </div>
+                            <div class="edit_forms1">
+                              
+                              <div class="first_row_bank_appove1">
+
+                                <div  class="first_row_attendence_container_approve">
+                                  <div class="apply_attendence_container">
+                                    <div class="apply_attendence_row">
+            
+                                      <label for="leave" style="font-size: medium; font-weight: 500;">Absence / Attendence Type: <span style="color: red;">*</span> </label>
+            
+                                      <div class="select">
+                                        <select class="leave_selection" >
+                                          <option> <span>Floating Leave</span></option>
+                                          <option value="1"><span> Sick / Casual Leave</span></option>
+                                          
+                                        </select>
+                                      </div>
+                                    </div>
+            
+                                    <div class="apply_attendence_row" id="apply_attendence_row">
+            
+                                      <div class="apply_date">
+                                        <label for="date" style="font-size: medium; font-weight: 500;">Date From:<span style="color: red;">*</span> </label>
+                                        <div class="leave_input_date">
+                                          <input form="date_from" type="date"/>
+                                        </div> 
+                                      </div>
+                                      
+                                      <div apply_date>
+                                        <label for="date" style="font-size: medium; font-weight: 500;">Date To:<span style="color: red;">*</span> </label>
+                                        <div class="leave_input_date">
+                                          <input form="date_from" type="date"/>
+                                        </div>
+                                      </div>
+                                  </div>
+            
+                                  <div class="apply_attendence_row">
+            
+                                    <label for="full_day" style="font-size: medium; font-weight: 500;">Half Day / Full Day: <span style="color: red;">*</span> </label>
+            
+                                    <div class="select">
+                                      <select class="leave_selection" >
+                                        <option> <span>Full Day</span></option>
+                                        <option value="1"><span> Half Day</span></option>
+                                        
+                                      </select>
+                                    </div>
+                                  </div>
+            
+                                  <div class="apply_attendence_row">
+            
+                                    <label for="approver" style="font-size: medium; font-weight: 500;">Approver: </label>
+            
+                                    <div class="leave_input">
+                                      <input form="date_from" type="text" value="Mr. Durga" disabled>
+                                      
+                                    </div>
+                                  </div>
+            
+                                  <div class="apply_attendence_row">
+            
+                                    <label for="note" style="font-size: medium; font-weight: 500;">Note for approver: <span style="color: red;">*</span>  </label>
+            
+                                    <div class="leave_input">
+                                      <textarea placeholder="Type your note here.."></textarea>
+                                      
+                                    </div>
+                                  </div>
+            
+                                  <div class="apply_attendence_row_buttons">
+                                    <div class="apply_attendence_button">
+                                      <button class="attendence_submit">Submit</button>
+            
+                                    </div>
+            
+                                    <div class="apply_attendence_button">
+                                      <button class="attendence_cancel" onclick = "cancel()" type="reset">Cancel</button>
+            
+                                    </div>
+            
+                                    
+                                    
+                                  </div>
+            
+            
+            
+            
+                                  </div>
+            
+                                  
+            
+                                </div>
+                                
+                              
+                                  
+                                  
+                              </div>
+                              
+                                
+                              </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    
+
+
                   </div>
                 </div>
               </div>
@@ -780,7 +971,8 @@
       document.getElementById("myPay_content").style.display = "none";
       document.getElementById("bank_content").style.display = "none";
       document.getElementById("attendence_content").style.display = "none";
-      document.getElementById("myTime_content").style.display = "none";
+      document.getElementById("myTime_content").style.display = "none"; 
+      document.getElementById("request_content").style.display = "none";
       document.getElementById("aboutMe_content").style.display="contents";
 
       var hamburger = document.querySelector(".hamburger");
@@ -817,7 +1009,7 @@
             const upload= document.getElementById('file')
             const value= upload.setAttribute('type','file')
             const hover=document.getElementsByClassName('profile_photo')
-          hover.classList.add("d-none")
+            hover.classList.add("d-none")
 
         }else { 
           savebutton.innerHTML="edit" ; 
@@ -853,23 +1045,32 @@
         if (bank_savebutton.innerHTML=="edit" ) { 
           bank_savebutton.innerHTML="save" ;
           bank_savebutton.style.background = 'green';
-          document.getElementById("slct").toggleAttribute("disabled")
-          
+          document.getElementById("slct").toggleAttribute("disabled")   
+          document.getElementById("slct_type").toggleAttribute("disabled")
           document.getElementById("slct").style.appearance = "auto"
+
+           
+          
+          document.getElementById("slct_type").style.appearance = "auto"
           bank_edit_status = true
 
            
 
         }else { 
-          bank_savebutton.innerHTML="edit" ; 
-          bank_savebutton.style.background = 'black';
-          document.getElementById("slct").toggleAttribute("disabled")
-          fname = document.getElementById("edited_first_name").value;
-          lname = document.getElementById("edited_last_name").value;
-          document.getElementById("slct").style.appearance = "none"
-          bank_edit_status = false
+            bank_savebutton.innerHTML="edit" ; 
+            bank_savebutton.style.background = 'black';
+            document.getElementById("slct").toggleAttribute("disabled")
+            fname = document.getElementById("edited_first_name").value;
+            lname = document.getElementById("edited_last_name").value;
+            document.getElementById("slct").style.appearance = "none"
+            document.getElementById("slct_type").style.appearance = "none"
+            document.getElementById("slct_type").toggleAttribute("disabled")
+            
+
+            bank_edit_status = false
           } 
-          document.getElementById("slct").setAttribute("slct","disabled")
+          // document.getElementById("slct").setAttribute("slct","disabled")
+          // document.getElementById("slct_type").setAttribute("slct_type","disabled")
           
           
            
@@ -894,6 +1095,7 @@
                   document.getElementById("attendence_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("aboutMe_content").style.display = "contents";
                 }
                 else
@@ -911,6 +1113,7 @@
                   document.getElementById("attendence_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("myPay_content").style.display = "contents";
                 }
                 else
@@ -927,6 +1130,7 @@
                   document.getElementById("myPay_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("attendence_content").style.display = "contents";
                 }
                 else
@@ -943,6 +1147,7 @@
                   document.getElementById("myPay_content").style.display = "none";
                   document.getElementById("attendence_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "contents";
 
                 }
@@ -962,7 +1167,30 @@
                   document.getElementById("myPay_content").style.display = "none";
                   document.getElementById("attendence_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "contents";
+
+                }
+                else
+                {
+                  window.alert("Save the updated deatils!")
+                }
+                 
+                
+              }
+
+
+              if(selected[0].id == "sidebar_icon_request" )
+              {
+                if(editStatus == false && bank_edit_status == false)
+                {
+                  document.getElementById("aboutMe_content").style.display = "none";
+                  document.getElementById("myPay_content").style.display = "none";
+                  document.getElementById("attendence_content").style.display = "none";
+                  document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("bank_content").style.display = "none"
+                  document.getElementById("request_content").style.display = "contents";
+                  ;
 
                 }
                 else
@@ -1244,6 +1472,24 @@
 
           }
         
+
+        //   let model = document.getElementsByClassName("openmodale")
+        //   model.addEventListener("click", function (e) {
+        //   e.preventDefault();
+        //   $(".modale").addClass("opened");
+        // });
+        // $(".closemodale").click(function (e) {
+        //   e.preventDefault();
+        //   $(".modale").removeClass("opened");
+        // });
+
+        function open_model(){
+          console.log("hii");
+          document.getElementById("request_content").style.display = "none";
+          document.getElementById("modale_open").style.display = "content";
+
+        }
+
         
 
   </script>

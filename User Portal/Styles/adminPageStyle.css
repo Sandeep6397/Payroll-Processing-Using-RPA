@@ -252,6 +252,7 @@ body.active .edit_card .edit_inputs input {
 }
 
 .edit_card  select{
+
   height: 40px;
   width: 330px;
   font-size: 18px;
@@ -270,7 +271,13 @@ body.active .edit_card .edit_inputs input {
 #slct[disabled]{
   border: 2px solid rgba(0, 0, 0, 0);
   color: #000;
- 
+  padding-left: 5px;
+}
+
+#slct_type[disabled]{
+  border: 2px solid rgba(0, 0, 0, 0);
+  color: #000;
+  padding-left: 5px;
 }
 
 .profile_title{
@@ -370,10 +377,12 @@ select {
   height: 40px;
   width: 330px;
   color: black;
-  cursor: text;
+  cursor: pointer;
   border: none;
   
 }
+
+ 
 
 .select select{
   padding-left: 15px;
@@ -384,7 +393,7 @@ select {
   height: 35px;
   width: 330px;
   color: #000;
-  cursor: text;
+  cursor: pointer;
   border-radius: 5px;
   border: 1px solid black;
   

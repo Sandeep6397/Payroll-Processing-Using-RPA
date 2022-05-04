@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Portal</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../Styles/adminPageStyle.css">
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <script src="https://kit.fontawesome.com/3dc00a07e8.js" crossorigin="anonymous"></script>
@@ -77,24 +77,6 @@
                   <div class="container">
 
                     <div class="inner_section">
-
-                      
-
-                      <section id= "model_content" style="display: none;">
-                        <div class="edit_container">
-                              <div id="openModal" class="modalbg">
-                                <div class="dialog">
-                                  <div class="model_button_class">
-                                    <button class="model_button" type="close" onclick="close_model()">X</button>
-                                  </div>
-                                
-                                  <h2>Holy Crap!!!</h2>
-                                  <p>Please save the content</p>
-                                  
-                                </div>
-                              </div>
-                          </div>
-                      </section>
 
                     
                       <section id= "aboutMe_content" style="display: contents;">
@@ -883,10 +865,11 @@
             document.getElementById("slct_type").style.appearance = "none"
             document.getElementById("slct_type").toggleAttribute("disabled")
             
-            
 
             bank_edit_status = false
           } 
+          // document.getElementById("slct").setAttribute("slct","disabled")
+          // document.getElementById("slct_type").setAttribute("slct_type","disabled")
           
           
            
@@ -912,11 +895,10 @@
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
                   document.getElementById("aboutMe_content").style.display = "contents";
-                  document.getElementById("model_content").style.display = "none"
                 }
                 else
                 {
-                  document.getElementById("model_content").style.display = "contents"
+                  window.alert("Save the updated deatils!")
                 }
                  
               }
@@ -930,11 +912,10 @@
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
                   document.getElementById("myPay_content").style.display = "contents";
-                  document.getElementById("model_content").style.display = "none"
                 }
                 else
                 {
-                  document.getElementById("model_content").style.display = "contents"
+                  window.alert("Save the updated deatils!")
                 }
               }
 
@@ -947,11 +928,10 @@
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
                   document.getElementById("attendence_content").style.display = "contents";
-                  document.getElementById("model_content").style.display = "none"
                 }
                 else
                 {
-                  document.getElementById("model_content").style.display = "contents"
+                  window.alert("Save the updated deatils!")
                 }
               }
 
@@ -968,7 +948,7 @@
                 }
                 else
                 {
-                  document.getElementById("model_content").style.display = "contents"
+                  window.alert("Save the updated deatils!")
                 }
                  
                 
@@ -987,7 +967,7 @@
                 }
                 else
                 {
-                  document.getElementById("model_content").style.display = "contents"
+                  window.alert("Save the updated deatils!")
                 }
                  
                 
@@ -1262,10 +1242,6 @@
             
 
 
-          }
-
-          function close_model() {
-            
           }
         
         
