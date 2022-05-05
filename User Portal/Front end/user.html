@@ -65,7 +65,7 @@
 
                     <li class="sidebar_icon" id="sidebar_icon_request">
                       <a href="#">
-                        <span class="icon"><i class=""></i></span>
+                        <span class="icon"><i class="fa fa-cloud-moon"></i></span>
                         <span class="item">Request </span>
                       </a>
                     </li>
@@ -802,7 +802,7 @@
                                             <td>03/12/2021</td>
                                             <td>Floating Leave</td>
                                             <td>Full</td>
-                                            <td><button class="preview_button">Preview</button></td>
+                                            <td><button class="preview_button" onclick="open_model()">Preview</button></td>
                                           </tr>
                                              
                                             <tr>
@@ -812,7 +812,7 @@
                                               <td>03/12/2021</td>
                                               <td>Floating Leave</td>
                                               <td>Full</td>
-                                              <td><button class="preview_button">Preview</button></td>
+                                              <td><button class="preview_button" onclick="open_model()">Preview</button></td>
                                             </tr>
                                               
                                 
@@ -833,7 +833,7 @@
                         </div>
                     </section>
 
-                    <section id= "approve_atendence_request" style="display: contents;">
+                    <section id= "approve_atendence_request" style="display: none;">
                       <div class="edit_container">
                         <div class="edit_card">
                             <div class="edit_info"> 
@@ -844,86 +844,53 @@
                               
                               <div class="first_row_bank_appove1">
 
-                                <div  class="first_row_attendence_container_approve">
+                                <div  class="first_row_attendence_container_approve_request">
                                   <div class="apply_attendence_container">
-                                    <div class="apply_attendence_row">
-            
-                                      <label for="leave" style="font-size: medium; font-weight: 500;">Absence / Attendence Type: <span style="color: red;">*</span> </label>
-            
-                                      <div class="select">
-                                        <select class="leave_selection" >
-                                          <option> <span>Floating Leave</span></option>
-                                          <option value="1"><span> Sick / Casual Leave</span></option>
-                                          
-                                        </select>
-                                      </div>
-                                    </div>
-            
-                                    <div class="apply_attendence_row" id="apply_attendence_row">
-            
-                                      <div class="apply_date">
-                                        <label for="date" style="font-size: medium; font-weight: 500;">Date From:<span style="color: red;">*</span> </label>
-                                        <div class="leave_input_date">
-                                          <input form="date_from" type="date"/>
-                                        </div> 
-                                      </div>
-                                      
-                                      <div apply_date>
-                                        <label for="date" style="font-size: medium; font-weight: 500;">Date To:<span style="color: red;">*</span> </label>
-                                        <div class="leave_input_date">
-                                          <input form="date_from" type="date"/>
-                                        </div>
-                                      </div>
-                                  </div>
-            
-                                  <div class="apply_attendence_row">
-            
-                                    <label for="full_day" style="font-size: medium; font-weight: 500;">Half Day / Full Day: <span style="color: red;">*</span> </label>
-            
-                                    <div class="select">
-                                      <select class="leave_selection" >
-                                        <option> <span>Full Day</span></option>
-                                        <option value="1"><span> Half Day</span></option>
+                                    <div class="row">
+                                      <div class="form_approve " >
                                         
-                                      </select>
-                                    </div>
-                                  </div>
-            
-                                  <div class="apply_attendence_row">
-            
-                                    <label for="approver" style="font-size: medium; font-weight: 500;">Approver: </label>
-            
-                                    <div class="leave_input">
-                                      <input form="date_from" type="text" value="Mr. Durga" disabled>
-                                      
-                                    </div>
-                                  </div>
-            
-                                  <div class="apply_attendence_row">
-            
-                                    <label for="note" style="font-size: medium; font-weight: 500;">Note for approver: <span style="color: red;">*</span>  </label>
-            
-                                    <div class="leave_input">
-                                      <textarea placeholder="Type your note here.."></textarea>
-                                      
-                                    </div>
-                                  </div>
-            
-                                  <div class="apply_attendence_row_buttons">
-                                    <div class="apply_attendence_button">
-                                      <button class="attendence_submit">Submit</button>
-            
-                                    </div>
-            
-                                    <div class="apply_attendence_button">
-                                      <button class="attendence_cancel" onclick = "cancel()" type="reset">Cancel</button>
-            
-                                    </div>
-            
-                                    
-                                    
-                                  </div>
-            
+                                          <h1> Attendence Request </h1>
+                                          
+                                          <fieldset>
+
+                                            <label for="email">PID:</label>
+                                            <input type="text" id="text" name="pid" value="111111" readonly>
+
+                                            <label for="name">Name:</label>
+                                            <input type="text" id="name" name="user_name" value="Reshma" readonly>
+
+                                            <div class="attendence_date">
+                                                <div class="inner_attendence_date">
+                                                  <label for="name">From Date:</label>
+                                                  <input type="text" id="from" name="from_date" value="01/10/2022" readonly>
+
+                                                </div>
+                                                <div class="inner_attendence_date">
+                                                  <label for="name">To Date:</label>
+                                                  <input type="text" id="to" name="to_date" value="02/10/2022" readonly>
+                                                </div>
+                                            </div>
+                                            
+                                            <label for="name">Leave Type:</label>
+                                            <input type="text" id="name" name="user_name" value="Sick Leave" readonly>
+
+
+                                          
+                                           
+                                           
+                                          </fieldset>
+                   
+                                        <div class="attendence_approve_button">
+                                          <button type="submit" id="decline_button" onclick="move_back()" >Hold</button>
+                                          <button type="submit">Approve</button>
+                                          <button type="submit" id="decline_button">Decline</button>
+
+                                        </div>
+                                          
+                                          
+
+                                          </div>
+                                        </div>
             
             
             
@@ -1484,11 +1451,18 @@
         // });
 
         function open_model(){
-          console.log("hii");
-          document.getElementById("request_content").style.display = "none";
-          document.getElementById("modale_open").style.display = "content";
-
+          document.getElementById("request_content").style.display = "none"
+          document.getElementById("approve_atendence_request").style.display = "contents"
+         
         }
+
+        function move_back(){
+          document.getElementById("request_content").style.display = "contents"
+          document.getElementById("approve_atendence_request").style.display = "none"
+         
+        }
+
+        
 
         
 

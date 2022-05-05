@@ -376,84 +376,50 @@
 
                                         <div  class="first_row_attendence_container" id="first_row_attendence_container1" style="display: none; ">
                                             <div class="apply_attendence_container">
-                                              <div class="apply_attendence_row">
+                                                    <div class="row">
+                                                      <div class="form_approve " >
+                                                        
+                                                          <h1> Attendence Request </h1>
+                                                          
+                                                          <fieldset>
 
-                                                <label for="leave" style="font-size: medium; font-weight: 500;">Absence / Attendence Type: <span style="color: red;">*</span> </label>
+                                                            <label for="email">PID:</label>
+                                                            <input type="text" id="text" name="pid" value="111111" readonly>
+      
+                                                            <label for="name">Name:</label>
+                                                            <input type="text" id="name" name="user_name" value="Reshma" readonly>
 
-                                                <div class="select">
-                                                  <select class="leave_selection" >
-                                                    <option> <span>Floating Leave</span></option>
-                                                    <option value="1"><span> Sick / Casual Leave</span></option>
-                                                    
-                                                  </select>
-                                                </div>
-                                              </div>
+                                                            <div class="attendence_date">
+                                                                <div class="inner_attendence_date">
+                                                                  <label for="name">From Date:</label>
+                                                                  <input type="text" id="from" name="from_date" value="01/10/2022" readonly>
 
-                                              <div class="apply_attendence_row" id="apply_attendence_row">
+                                                                </div>
+                                                                <div class="inner_attendence_date">
+                                                                  <label for="name">To Date:</label>
+                                                                  <input type="text" id="to" name="to_date" value="02/10/2022" readonly>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <label for="name">Leave Type:</label>
+                                                            <input type="text" id="name" name="user_name" value="Sick Leave" readonly>
 
-                                                <div class="apply_date">
-                                                  <label for="date" style="font-size: medium; font-weight: 500;">Date From:<span style="color: red;">*</span> </label>
-                                                  <div class="leave_input_date">
-                                                    <input form="date_from" type="date"/>
-                                                  </div> 
-                                                </div>
-                                                
-                                                <div apply_date>
-                                                  <label for="date" style="font-size: medium; font-weight: 500;">Date To:<span style="color: red;">*</span> </label>
-                                                  <div class="leave_input_date">
-                                                    <input form="date_from" type="date"/>
-                                                  </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="apply_attendence_row">
+                                                          
+                                                           
+                                                           
+                                                          </fieldset>
+                                   
+                                                        <div class="attendence_approve_button">
+                                                          <button type="submit">Approve</button>
+                                                          <button type="submit" id="decline_button">Decline</button>
 
-                                              <label for="full_day" style="font-size: medium; font-weight: 500;">Half Day / Full Day: <span style="color: red;">*</span> </label>
+                                                        </div>
+                                                          
+                                                          
 
-                                              <div class="select">
-                                                <select class="leave_selection" >
-                                                  <option> <span>Full Day</span></option>
-                                                  <option value="1"><span> Half Day</span></option>
-                                                  
-                                                </select>
-                                              </div>
-                                            </div>
-
-                                            <div class="apply_attendence_row">
-
-                                              <label for="approver" style="font-size: medium; font-weight: 500;">Approver: </label>
-
-                                              <div class="leave_input">
-                                                <input form="date_from" type="text" value="Mr. Durga" disabled>
-                                                
-                                              </div>
-                                            </div>
-
-                                            <div class="apply_attendence_row">
-
-                                              <label for="note" style="font-size: medium; font-weight: 500;">Note for approver: <span style="color: red;">*</span>  </label>
-
-                                              <div class="leave_input">
-                                                <textarea placeholder="Type your note here.."></textarea>
-                                                
-                                              </div>
-                                            </div>
-
-                                            <div class="apply_attendence_row_buttons">
-                                              <div class="apply_attendence_button">
-                                                <button class="attendence_submit">Submit</button>
-
-                                              </div>
-
-                                              <div class="apply_attendence_button">
-                                                <button class="attendence_cancel" onclick = "cancel()" type="reset">Cancel</button>
-
-                                              </div>
-
-                                              
-                                              
-                                            </div>
-
+                                                          </div>
+                                                        </div>
 
 
 
