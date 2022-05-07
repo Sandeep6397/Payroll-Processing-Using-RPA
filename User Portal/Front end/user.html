@@ -93,7 +93,8 @@
                       <section id= "aboutMe_content" style="display: contents;">
                         <div class="edit_container">
                           <div class="edit_card">
-                              <div class="edit_info"> <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">About Me</div> <button id="savebutton" click = "function()">edit</button> </div>
+                              <div class="edit_info"> <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">About Me</div>
+                               <button id="savebutton" click = "function()">edit</button> </div>
                               <div class="edit_forms">
                                 
                                 <div class="first_row">
@@ -124,16 +125,15 @@
                                         <div class="inner_container_profile">
                                             <div class="inner_profile_photo">
                                               
-                                              <div class="profile-pic">
+                                              <div id="profile-pic" class="profile-pic" >
                                                 <label class="-label" for="file" >
                                                   
-                                                  <span>Change Image</span>
+                                                  <span id="change-photo"></span>
                                                 </label>
-                                                <input id="file" type="none" readonly onchange="previewFile()" style=""  />
+                                                <input id="file" type="none" readonly onchange="previewFile()" />
+                                                
                                                 <img src="../../a.png" id="output" width="200" />
                                               </div>
-                                               
-                                            </div>
                                         </div>
                                       </div>
                                 </div>
@@ -319,7 +319,7 @@
                               </div>
                               <div class="edit_forms_attendence">
                                 
-                                        <div id="first_row_attendence1"  class="first_row_attendence" style="display: contents;">
+                                        <div id="first_row_attendence1"  class="first_row_attendence1" style="display: contents;">
                                           <div class="pie_border">
                                             <div class="pie_title">
                                               <div style="text-align: center; font-size: 30px; padding-top: 15px; font-family: Open Sans;">Floating Holiday</div>
@@ -330,17 +330,11 @@
                                                 
                                                 <div>Days remaining from 01 Mar 2022 to 31 Dec 2022 entitlement of <span class="days">2.00 Days</span></div>
                                                 
-                                                <div class="apply_leave">
-
-                                                  <button class="apply_leave_button" onclick="requestAttendence()">Request Attendence</button>
-                                                  
-                                                </div>
-          
-          
                                               </div>
                                             </div>
                                             
-                                          </div> <div class="pie_border">
+                                          </div> 
+                                          <div class="pie_border">
                                             <div class="pie_title">
                                               <div style="text-align: center; font-size: 30px; padding-top: 15px; font-family: Open Sans;">Sick Leave/Casual Leave</div>
                                             </div>
@@ -349,18 +343,18 @@
                                               <div class="pie_inner_content">
                                                 
                                                 <div>Days remaining from 01 Mar 2022 to 31 Dec 2022 entitlement of <span class="days">6.00 Days</span></div>
-                                                <div class="apply_leave">
-
-                                                  <button class="apply_leave_button"  onclick="requestAttendence()">Request Attendence</button>
-                                                  
-                                                </div>
-                                                
-          
-          
+                                    
                                               </div>
                                             </div>
                                             
                                           </div>
+
+                                          <div class="apply_leave">
+
+                                            <button class="apply_leave_button"  onclick="requestAttendence()">Apply for Leave</button>
+                                            
+                                          </div>
+                                          
 
 
                                           
@@ -941,7 +935,7 @@
       document.getElementById("myTime_content").style.display = "none"; 
       document.getElementById("request_content").style.display = "none";
       document.getElementById("aboutMe_content").style.display="contents";
-
+      
       var hamburger = document.querySelector(".hamburger");
       hamburger.addEventListener("click", function () {
         document.querySelector("body").classList.toggle("active");
@@ -970,13 +964,15 @@
           inputs[i].toggleAttribute('readonly');
         }; 
         // inputFile.setAttribute(in)
+        
         if (savebutton.innerHTML=="edit" ) { 
             savebutton.innerHTML="save" ;
             savebutton.style.background = 'green';
             const upload= document.getElementById('file')
             const value= upload.setAttribute('type','file')
             const hover=document.getElementsByClassName('profile_photo')
-            hover.classList.add("d-none")
+            document.getElementById("profile-pic").style ="--hover-color:  rgba(0, 0, 0, 0.8);  --hover-radius: 100px;"
+            document.getElementById("change-photo").innerHTML = "Change Photo"
 
         }else { 
           savebutton.innerHTML="edit" ; 
@@ -987,8 +983,9 @@
           document.getElementById("first_name").innerHTML = fname + " "  + lname;
           const upload= document.getElementById('file')
           const value= upload.setAttribute('type','none')
-
           const hover=document.getElementsByClassName('-label')
+          document.getElementById("change-photo").innerHTML = "" 
+          document.getElementById("profile-pic").style ="none"
           } 
 
          editStatus = false 
@@ -1064,6 +1061,8 @@
                   document.getElementById("myTime_content").style.display = "none";
                   document.getElementById("request_content").style.display = "none";
                   document.getElementById("aboutMe_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
+
                 }
                 else
                 {
@@ -1082,6 +1081,8 @@
                   document.getElementById("myTime_content").style.display = "none";
                   document.getElementById("request_content").style.display = "none";
                   document.getElementById("myPay_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
+
                 }
                 else
                 {
@@ -1099,6 +1100,8 @@
                   document.getElementById("myTime_content").style.display = "none";
                   document.getElementById("request_content").style.display = "none";
                   document.getElementById("attendence_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
+
                 }
                 else
                 {
@@ -1116,6 +1119,7 @@
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("request_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
 
                 }
                 else
@@ -1136,6 +1140,7 @@
                   document.getElementById("myTime_content").style.display = "none";
                   document.getElementById("request_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
 
                 }
                 else
@@ -1157,7 +1162,8 @@
                   document.getElementById("myTime_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "none"
                   document.getElementById("request_content").style.display = "contents";
-                  ;
+                  document.getElementById("approve_atendence_request").style.display = "none"
+
 
                 }
                 else
@@ -1170,7 +1176,7 @@
             });
         });
       
-      // Image upload
+      //Image upload
       
         //   var loadFile = function (event) {
 
@@ -1183,6 +1189,7 @@
         //   // Image change
         //   document.getElementById("myImageId").src= photo;
         // };
+
         function previewFile() {
         var preview = document.querySelector("img");
         var file = document.querySelector("input[type=file]").files[0];
@@ -1210,7 +1217,8 @@
        
 
         // For image
-        document.getElementById("myImageId").src=document.getElementById("output").src;
+        // document.getElementById("myImageId").src=document.getElementById("output").src;
+        // document.getElementById("output").src = document.getElementById("myImageId").src
 
 
 
@@ -1462,6 +1470,7 @@
          
         }
 
+        
         
 
         

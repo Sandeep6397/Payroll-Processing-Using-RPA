@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Portal</title>
+    <title>Admin Portal</title>
     <link rel="stylesheet" href="../Styles/adminPageStyle.css">
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -62,6 +62,27 @@
                         <span class="item">Bank </span>
                       </a>
                     </li>
+
+                    <li class="sidebar_icon" id="sidebar_icon_request">
+                      <a href="#">
+                        <span class="icon"><i class="fa fa-cloud-moon"></i></span>
+                        <span class="item">Request </span>
+                      </a>
+                    </li>
+
+                    <li class="sidebar_icon" id="sidebar_icon_pay">
+                      <a href="#">
+                        <span class="icon"><i class="fa fa-cloud-moon"></i></span>
+                        <span class="item">Pay Salary </span>
+                      </a>
+                    </li>
+
+                    <li class="sidebar_icon" id="sidebar_icon_add/remove">
+                      <a href="#">
+                        <span class="icon"><i class="fa fa-cloud-moon"></i></span>
+                        <span class="item">Add/Remove Staff </span>
+                      </a>
+                    </li>
                     
                     
                   </ul>
@@ -78,11 +99,16 @@
 
                     <div class="inner_section">
 
+
+                              
+                             
+
                     
                       <section id= "aboutMe_content" style="display: contents;">
                         <div class="edit_container">
                           <div class="edit_card">
-                              <div class="edit_info"> <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">About Me</div> <button id="savebutton" click = "function()">edit</button> </div>
+                              <div class="edit_info"> <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">About Me</div>
+                               <button id="savebutton" click = "function()">edit</button> </div>
                               <div class="edit_forms">
                                 
                                 <div class="first_row">
@@ -113,16 +139,15 @@
                                         <div class="inner_container_profile">
                                             <div class="inner_profile_photo">
                                               
-                                              <div class="profile-pic">
+                                              <div id="profile-pic" class="profile-pic" >
                                                 <label class="-label" for="file" >
                                                   
-                                                  <span>Change Image</span>
+                                                  <span id="change-photo"></span>
                                                 </label>
-                                                <input id="file" type="none" readonly onchange="previewFile()" style=""  />
+                                                <input id="file" type="none" readonly onchange="previewFile()" />
+                                                
                                                 <img src="../../a.png" id="output" width="200" />
                                               </div>
-                                               
-                                            </div>
                                         </div>
                                       </div>
                                 </div>
@@ -308,7 +333,7 @@
                               </div>
                               <div class="edit_forms_attendence">
                                 
-                                        <div id="first_row_attendence1"  class="first_row_attendence" style="display: contents;">
+                                        <div id="first_row_attendence1"  class="first_row_attendence1" style="display: contents;">
                                           <div class="pie_border">
                                             <div class="pie_title">
                                               <div style="text-align: center; font-size: 30px; padding-top: 15px; font-family: Open Sans;">Floating Holiday</div>
@@ -319,17 +344,11 @@
                                                 
                                                 <div>Days remaining from 01 Mar 2022 to 31 Dec 2022 entitlement of <span class="days">2.00 Days</span></div>
                                                 
-                                                <div class="apply_leave">
-
-                                                  <button class="apply_leave_button" onclick="requestAttendence()">Request Attendence</button>
-                                                  
-                                                </div>
-          
-          
                                               </div>
                                             </div>
                                             
-                                          </div> <div class="pie_border">
+                                          </div> 
+                                          <div class="pie_border">
                                             <div class="pie_title">
                                               <div style="text-align: center; font-size: 30px; padding-top: 15px; font-family: Open Sans;">Sick Leave/Casual Leave</div>
                                             </div>
@@ -338,18 +357,18 @@
                                               <div class="pie_inner_content">
                                                 
                                                 <div>Days remaining from 01 Mar 2022 to 31 Dec 2022 entitlement of <span class="days">6.00 Days</span></div>
-                                                <div class="apply_leave">
-
-                                                  <button class="apply_leave_button"  onclick="requestAttendence()">Request Attendence</button>
-                                                  
-                                                </div>
-                                                
-          
-          
+                                    
                                               </div>
                                             </div>
                                             
                                           </div>
+
+                                          <div class="apply_leave">
+
+                                            <button class="apply_leave_button"  onclick="requestAttendence()">Apply for Leave</button>
+                                            
+                                          </div>
+                                          
 
 
                                           
@@ -749,6 +768,244 @@
                     </section>
 
 
+
+                    <section id= "request_content" style="display: contents;">
+                      <div class="edit_container">
+                        <div class="edit_card">
+                            <div class="edit_info"> 
+                              <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">Attendence Requests</div> 
+                              
+                            </div>
+                            <div class="edit_forms">
+                              
+                              <div class="first_row_bank_appove">
+
+                                <table class="styled-table">
+                                  <thead>
+                                      <tr>
+                                          <th>NO.</th>
+                                          <th>Name</th>
+                                          <th>FROM</th>
+                                          <th>TO</th>
+                                          <th>LEAVE TYPE</th>
+                                          <th>FULL/HALF DAY</th>
+                                          <th>PREVIEW</th>
+                                          
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Mr.Durga</td>
+                                              <td>01/12/2021</td>
+                                              <td>03/12/2021</td>
+                                              <td>Floating Leave</td>
+                                              <td>Full</td>
+                                              <td><button class="preview_button" onclick="open_model()">Preview</button></td>
+                                          </tr>
+                                          <tr>
+                                            <td>2</td>
+                                            <td>Mr.Durga</td>
+                                            <td>01/12/2021</td>
+                                            <td>03/12/2021</td>
+                                            <td>Floating Leave</td>
+                                            <td>Full</td>
+                                            <td><button class="preview_button" onclick="open_model()">Preview</button></td>
+                                          </tr>
+                                             
+                                            <tr>
+                                              <td>3</td>
+                                              <td>Mr.Durga</td>
+                                              <td>01/12/2021</td>
+                                              <td>03/12/2021</td>
+                                              <td>Floating Leave</td>
+                                              <td>Full</td>
+                                              <td><button class="preview_button" onclick="open_model()">Preview</button></td>
+                                            </tr>
+                                              
+                                
+                                      
+                                    </tbody>
+                                </table>
+                                
+                              
+                                  
+                                  
+                              </div>
+                              
+                                
+                              </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id= "approve_atendence_request" style="display: none;">
+                      <div class="edit_container">
+                        <div class="edit_card">
+                            <div class="edit_info"> 
+                              <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">Attendence Requests</div> 
+                              
+                            </div>
+                            <div class="edit_forms1">
+                              
+                              <div class="first_row_bank_appove1">
+
+                                <div  class="first_row_attendence_container_approve_request">
+                                  <div class="apply_attendence_container">
+                                    <div class="row">
+                                      <div class="form_approve " >
+                                        
+                                          <h1> Attendence Request </h1>
+                                          
+                                          <fieldset>
+
+                                            <label for="email">PID:</label>
+                                            <input type="text" id="text" name="pid" value="111111" readonly>
+
+                                            <label for="name">Name:</label>
+                                            <input type="text" id="name" name="user_name" value="Reshma" readonly>
+
+                                            <div class="attendence_date">
+                                                <div class="inner_attendence_date">
+                                                  <label for="name">From Date:</label>
+                                                  <input type="text" id="from" name="from_date" value="01/10/2022" readonly>
+
+                                                </div>
+                                                <div class="inner_attendence_date">
+                                                  <label for="name">To Date:</label>
+                                                  <input type="text" id="to" name="to_date" value="02/10/2022" readonly>
+                                                </div>
+                                            </div>
+                                            
+                                            <label for="name">Leave Type:</label>
+                                            <input type="text" id="name" name="user_name" value="Sick Leave" readonly>
+
+
+                                          
+                                           
+                                           
+                                          </fieldset>
+                   
+                                        <div class="attendence_approve_button">
+                                          <button type="submit" id="decline_button" onclick="move_back()" >Hold</button>
+                                          <button type="submit">Approve</button>
+                                          <button type="submit" id="decline_button">Decline</button>
+
+                                        </div>
+                                          
+                                          
+
+                                          </div>
+                                        </div>
+            
+            
+            
+                                  </div>
+            
+                                  
+            
+                                </div>
+                                
+                              
+                                  
+                                  
+                              </div>
+                              
+                                
+                              </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id= "pay_salary" style="display: none;">
+                      <div class="edit_container">
+                        <div class="edit_card">
+                            <div class="edit_info"> 
+                              <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">Pay Salary</div> 
+                              
+                            </div>
+                            <div class="edit_forms1">
+                              
+                              <div class="first_row_bank_appove1">
+
+                                <div  class="first_row_attendence_container_approve_request">
+                                 
+                                  <div class="pay_salary_container">
+                                    <button type="submit" >Approve</button>
+                                  </div>
+                                  
+            
+                                </div>
+                                
+                              
+                                  
+                                  
+                              </div>
+                              
+                                
+                              </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id= "add/remove Employee" style="display: contents;">
+                      <div class="edit_container">
+                        <div class="edit_card">
+                            <div class="edit_info"> 
+                              <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">Add/Remove Staff</div> 
+                              
+                            </div>
+                            <div class="edit_forms1">
+                              
+                              <div class="first_row_bank_appove1">
+
+                                <div  class="first_row_add_remove_staff">
+                                 
+                                  <div class="add_staff">
+                                    <div class="add_staff_content">
+                                      <h1>Click the below button to add new hired Staffs</h1>
+                                    </div>
+
+                                    <div class="add_staff_button">
+                                      <button > Run Bot </button>
+                                    </div>
+                                  </div>
+
+                                  <div class="remove_staff">
+                                    <div class="remove_staff_content">
+                                      <h1>Click the below button to remove Staff</h1>
+                                    </div>
+
+                                    <div class="remove_staff_button">
+                                      <button > Run Bot </button>
+                                    </div>
+                                  </div>
+                                  
+                                  
+            
+                                </div>
+                                
+                              
+                                  
+                                  
+                              </div>
+                              
+                                
+                              </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </section>
+                    
+
+
                   </div>
                 </div>
               </div>
@@ -771,9 +1028,10 @@
       document.getElementById("myPay_content").style.display = "none";
       document.getElementById("bank_content").style.display = "none";
       document.getElementById("attendence_content").style.display = "none";
-      document.getElementById("myTime_content").style.display = "none";
+      document.getElementById("myTime_content").style.display = "none"; 
+      document.getElementById("request_content").style.display = "none";
       document.getElementById("aboutMe_content").style.display="contents";
-
+      
       var hamburger = document.querySelector(".hamburger");
       hamburger.addEventListener("click", function () {
         document.querySelector("body").classList.toggle("active");
@@ -802,13 +1060,15 @@
           inputs[i].toggleAttribute('readonly');
         }; 
         // inputFile.setAttribute(in)
+        
         if (savebutton.innerHTML=="edit" ) { 
             savebutton.innerHTML="save" ;
             savebutton.style.background = 'green';
             const upload= document.getElementById('file')
             const value= upload.setAttribute('type','file')
             const hover=document.getElementsByClassName('profile_photo')
-            hover.classList.add("d-none")
+            document.getElementById("profile-pic").style ="--hover-color:  rgba(0, 0, 0, 0.8);  --hover-radius: 100px;"
+            document.getElementById("change-photo").innerHTML = "Change Photo"
 
         }else { 
           savebutton.innerHTML="edit" ; 
@@ -819,8 +1079,9 @@
           document.getElementById("first_name").innerHTML = fname + " "  + lname;
           const upload= document.getElementById('file')
           const value= upload.setAttribute('type','none')
-
           const hover=document.getElementsByClassName('-label')
+          document.getElementById("change-photo").innerHTML = "" 
+          document.getElementById("profile-pic").style ="none"
           } 
 
          editStatus = false 
@@ -894,7 +1155,10 @@
                   document.getElementById("attendence_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("aboutMe_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
+
                 }
                 else
                 {
@@ -911,7 +1175,10 @@
                   document.getElementById("attendence_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("myPay_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
+
                 }
                 else
                 {
@@ -927,7 +1194,10 @@
                   document.getElementById("myPay_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("attendence_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
+
                 }
                 else
                 {
@@ -943,7 +1213,9 @@
                   document.getElementById("myPay_content").style.display = "none";
                   document.getElementById("attendence_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
 
                 }
                 else
@@ -962,7 +1234,32 @@
                   document.getElementById("myPay_content").style.display = "none";
                   document.getElementById("attendence_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
+
+                }
+                else
+                {
+                  window.alert("Save the updated deatils!")
+                }
+                 
+                
+              }
+
+
+              if(selected[0].id == "sidebar_icon_request" )
+              {
+                if(editStatus == false && bank_edit_status == false)
+                {
+                  document.getElementById("aboutMe_content").style.display = "none";
+                  document.getElementById("myPay_content").style.display = "none";
+                  document.getElementById("attendence_content").style.display = "none";
+                  document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("bank_content").style.display = "none"
+                  document.getElementById("request_content").style.display = "contents";
+                  document.getElementById("approve_atendence_request").style.display = "none"
+
 
                 }
                 else
@@ -1244,6 +1541,24 @@
 
           }
         
+
+    
+
+        function open_model(){
+          document.getElementById("request_content").style.display = "none"
+          document.getElementById("approve_atendence_request").style.display = "contents"
+         
+        }
+
+        function move_back(){
+          document.getElementById("request_content").style.display = "contents"
+          document.getElementById("approve_atendence_request").style.display = "none"
+         
+        }
+
+        
+        
+
         
 
   </script>

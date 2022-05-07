@@ -499,10 +499,6 @@ textarea:focus {
 }
 
 
-
-
-
-
 .profile-pic {
 color: transparent;
 transition: all 0.3s ease;
@@ -530,11 +526,12 @@ cursor: pointer;
 height: 165px;
 width: 165px;
 }
+
 .profile-pic:hover .-label {
   display: flex;
   justify-content: center;
   
-  background-color: rgba(0, 0, 0, 0.8); 
+  /* background-color: rgba(0, 0, 0, 0.8);  */
   z-index: 10000;
   
   color: #fafafa;
@@ -547,6 +544,12 @@ display: inline-flex;
 padding-top: 70px;
 height: 2em;
 }
+:hover .-label {
+  background-color: var(--hover-color);
+  /* transition: background-color 0.2s ease-in-out; */
+  border-radius: var(--hover-radius);
+}
+
 
 .inner_container_profile {
   margin-right: 20px;
@@ -697,7 +700,7 @@ table tbody tr {
 .pie_border{
   display: inline-table;
   border: 2px solid #c7cfdb;;
-  margin: 20px 40px 20px 40px;
+  margin: 20px 40px 0px 85px;
   background-color: #d2dae7;
 }
 
@@ -832,6 +835,10 @@ html {
 
 }
 
+.first_row_attendence1{
+  width: inherit;
+}
+
 .apply_leave_button{
   color: white;
   font-weight: 300;
@@ -852,6 +859,7 @@ html {
 }
 
 .apply_leave{
+  padding-bottom: 30px;
   padding-top: 30px;
   text-align: center;
 }
