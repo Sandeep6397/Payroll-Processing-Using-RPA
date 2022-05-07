@@ -152,20 +152,6 @@ body.active .edit_card .edit_inputs input {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .edit_container2 {
   height: 100vh;
   display: flex;
@@ -251,6 +237,23 @@ body.active .edit_card .edit_inputs input {
   outline: none
 }
 
+.edit_card .edit_inputs .text_area_address {
+  padding-left: 5px;
+  max-height: 97px;
+  min-height: 97px;
+  max-width: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  box-shadow: none;
+  border: 1px solid green;
+  outline: none;
+  overflow: hidden;
+}
+
+
+
+
 .edit_card  select{
 
   height: 40px;
@@ -260,12 +263,18 @@ body.active .edit_card .edit_inputs input {
   font-weight: 700;
   box-shadow: none;
   border: 1px solid green;
-  outline: none
+  outline: none;
 }
 
 .edit_card .edit_inputs input[type="text"][readonly] {
   border: 2px solid rgba(0, 0, 0, 0);
   color: #7f7f7f;
+}
+
+.edit_card .edit_inputs .text_area_address[readonly] {
+  border: 2px solid rgba(0, 0, 0, 0);
+  color: #7f7f7f;
+  
 }
 
 #slct[disabled]{
@@ -278,6 +287,7 @@ body.active .edit_card .edit_inputs input {
   border: 2px solid rgba(0, 0, 0, 0);
   color: #000;
   padding-left: 5px;
+  
 }
 
 .profile_title{
@@ -1211,33 +1221,162 @@ html {
   width: inherit;
   margin: 30px 50px;
   padding: 10px 50px;
- 
   border: 0px solid black;
-  box-shadow: 0px 15px 30px rgb(0 0 0 / 10%);
-  background-color: rgb(195, 189, 189);
+  box-shadow: 0px 15px 30px rgb(0 0 0 / 20%);
+  background-color: #d2dae7;
+}
+
+.first_row_remove_staff{
+  width: inherit;
+  margin: 30px 50px;
+  padding: 10px 50px;
+  border: 0px solid black;
+  
+  background-color: white;
 }
 
 
 .add_staff, .remove_staff{
   width: inherit;
-  border: 1px solid red;
-  padding: 5px;
-  display: table-column;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
+  border: 2px solid #b2c9ec;
+  padding: 20px 5px;
+  text-align: center;
 
 }
 
-.add_staff_content, .remove_staff_content, .add_staff_button ,.remove_staff_button{
+.add_staff_content, .remove_staff_content, .add_staff_button {
   width: inherit;
   padding: 1px;
   align-items: center;
   
+}
 
-
+.remove_staff_button{
+  width: inherit;
+  padding: 1px;
+  align-items: center;
+  gap: 20px;
 }
 .add_staff_content h1, .remove_staff_content h1{
   font-size: 20px;
   font-weight: 900;
+}
+
+#button_remove_staff_remove:active, #button_remove_staff_remove1:active{
+  background-color: red;
+  box-shadow: 0 2px #aec3c4;
+  transform: translateY(2px);
+}
+
+.add_staff_button button{
+  padding: 10px 15px 10px 15px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 20%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+.remove_staff_button button{
+  padding: 10px 15px 10px 15px;
+  color: #FFF;
+  background-color: red;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 20%;
+  border: 1px solid red;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+.add_staff_button button:active, .remove_staff_button button:active{
+  background-color: #3ac162;
+  box-shadow: 0 2px #aec3c4;
+  transform: translateY(2px);
+}
+
+
+ 
+.remove_container{
+  width: inherit;
+  /* border: 2px solid red; */
+  background-color: #d2dae7;
+  margin: 10px 100px;
+  padding: 20px;
+  box-shadow: 0px 0px 3px 1px #2dae7d;
+  text-align: center;
+}
+
+
+.remove_container .remove_staff_row{
+
+  padding: 10px 50px;
+  
+}
+
+.remove_container h1{
+
+  margin-bottom: 5px;
+
+}
+ .remove_staff_row input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding:10px 10px 10px 50px;
+  border-radius: 5px;
+  border: 1px solid #f0f0f0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+ .remove_staff_row input:focus{
+
+  border-color: #16a085;
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+.remove_staff_row input::placeholder{
+  color: #999;
+}
+.remove_staff_row i{
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  font-size: 18px;
+  background: #16a085;
+  border: 1px solid #16a085;
+  border-radius: 5px 0 0 5px;
+  
+  align-items: center;
+  padding: 10px 5px 5px 5px;
+  justify-content: center;
+}
+
+
+ .error {
+  display: block;
+  color: red;
+  font-size: 12px;
+  height: 13px;
+}
+
+.remove_staff_row.success input  {
+  border-color: #09c372;
+}
+
+.remove_staff_row.error input {
+  border-color: #ff3860;
 }

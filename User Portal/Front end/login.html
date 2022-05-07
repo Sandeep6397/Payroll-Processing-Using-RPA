@@ -16,7 +16,7 @@
         <form id="form" action="#">
           <div class="row">
             <i class="fas fa-user"></i>
-            <input id="email" name="email"  type="text" placeholder="Email or ID" >
+            <input id="eid" name="eid"  type="text" placeholder="Eployee ID" >
             <div class="error"></div>
           </div>
           <div class="row">
@@ -38,7 +38,7 @@
   <script type="text/javascript">
     const form = document.getElementById('form');
 
-const email = document.getElementById('email');
+const eid = document.getElementById('eid');
 const password = document.getElementById('password');
 
 
@@ -66,26 +66,25 @@ const setSuccess = element => {
     inputControl.classList.remove('error');
 };
 
-const isValidEmail = email => {
-    // const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const  re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@mite+(?:\.[a-zA-Z0-9-]+)*$/;
+// const isValidEmail = email => {
+//     // const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     const  re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@mite+(?:\.[a-zA-Z0-9-]+)*$/;
     
-    return re.test(String(email).toLowerCase());
-}
+//     return re.test(String(email).toLowerCase());
+// }
 
 const validateInputs = () => {
 
-    const emailValue = email.value.trim();
+    const eidValue = eid.value.trim();
     const passwordValue = password.value.trim();
 
-
-    if(emailValue === '') {
-        setError(email, 'Email or ID is required');
-    } else if (!isValidEmail(emailValue)) {
-        setError(email, 'Provide a valid email address');
-    } else {
-        setSuccess(email);
+    if(eidValue == ""){
+      setError(eid, 'Employee Id is required');
     }
+    else{
+      setSuccess(eid);
+    }
+    
 
     if(passwordValue === '') {
         setError(password, 'Password is required');
