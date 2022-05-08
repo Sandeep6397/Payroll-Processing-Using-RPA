@@ -152,20 +152,6 @@ body.active .edit_card .edit_inputs input {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .edit_container2 {
   height: 100vh;
   display: flex;
@@ -265,11 +251,8 @@ body.active .edit_card .edit_inputs input {
   overflow: hidden;
 }
 
-.edit_card .edit_inputs .text_area_address[readonly] {
-  border: 2px solid rgba(0, 0, 0, 0);
-  color: #7f7f7f;
-  
-}
+
+
 
 .edit_card  select{
 
@@ -280,12 +263,18 @@ body.active .edit_card .edit_inputs input {
   font-weight: 700;
   box-shadow: none;
   border: 1px solid green;
-  outline: none
+  outline: none;
 }
 
 .edit_card .edit_inputs input[type="text"][readonly] {
   border: 2px solid rgba(0, 0, 0, 0);
   color: #7f7f7f;
+}
+
+.edit_card .edit_inputs .text_area_address[readonly] {
+  border: 2px solid rgba(0, 0, 0, 0);
+  color: #7f7f7f;
+  
 }
 
 #slct[disabled]{
@@ -298,6 +287,7 @@ body.active .edit_card .edit_inputs input {
   border: 2px solid rgba(0, 0, 0, 0);
   color: #000;
   padding-left: 5px;
+  
 }
 
 .profile_title{
@@ -332,9 +322,7 @@ justify-content: space-between;
   margin-left: 50px;
   margin-right: 50px;
 }
-.first_row_myTime{
 
-}
 
 .first_row_details_bank{
   display: flex;
@@ -343,7 +331,7 @@ justify-content: space-between;
 
 #first_row_detail{
 gap: 20px;
-margin-top: 30px;
+margin-top: 7px;
 }
 
 #first_row_details{
@@ -1214,4 +1202,142 @@ html {
 
 .inner_attendence_date{
   width: -webkit-fill-available;
+}
+
+.pay_salary_container{
+  width: 500px;
+  height: 200px;
+}
+
+.add_staff, .remove_staff{
+  width: inherit;
+  margin: 20px;
+
+}
+
+
+
+.password_container{
+  width: inherit;
+  
+  background-color: #d2dae7;
+  margin: 10px 100px;
+  padding: 20px;
+  box-shadow: 0px 0px 3px 1px #2dae7d;
+  text-align: center;
+}
+
+
+.password_container .password_reset_row{
+ 
+  padding: 10px 50px;
+  
+}
+
+.password_container h1{
+
+  margin-bottom: 5px;
+
+}
+ .password_reset_row input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding:10px 10px 10px 50px;
+  border-radius: 5px;
+  border: 1px solid #f0f0f0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+ .password_reset_row input:focus{
+
+  border-color: #16a085;
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+.password_reset_row input::placeholder{
+  color: #999;
+}
+.password_reset_row i{
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  font-size: 18px;
+  background: #16a085;
+  border: 1px solid #16a085;
+  border-radius: 5px 0 0 5px;
+  
+  align-items: center;
+  padding: 10px 5px 5px 5px;
+  justify-content: center;
+}
+
+
+.password_reset_button{
+  margin-top: 10px;
+}
+
+.password_reset_button button{
+  padding: 10px 15px 10px 15px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 20%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+.password_reset_button button{
+  padding: 10px 15px 10px 15px;
+  color: #FFF;
+  background-color: red;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 20%;
+  
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+#button_password_back{
+  background-color: #4bc970;
+}
+
+#button_password_submit:active{
+  background-color: red;
+  box-shadow: 0 2px #aec3c4;
+  border: 1px solid red;
+  transform: translateY(2px);
+}
+
+#button_password_back:active{
+  
+  box-shadow: 0 2px #aec3c4;
+  border: 1px solid #4bc970;
+  transform: translateY(2px);
+}
+
+.password_reset_button{
+  margin-top: 10px;
+}
+
+.error {
+  display: block;
+  color: red;
+  font-size: 13px;
+  font-weight: 500;
+  height: 13px;
+  text-align: left;
 }
