@@ -27,10 +27,16 @@ hr {
   outline: #4CAF50 solid 1px;
   top: 0;
   left: 0;
-  width: 225px;
+  width: 230px;
+  overflow: scroll ;
+  
   height: 100%;
   padding: 10px 0;
   transition: all 0.5s ease;
+}
+
+.sidebar::-webkit-scrollbar{
+  width: 0px;
 }
 
 .wrapper .sidebar .profile {
@@ -165,7 +171,6 @@ body.active .edit_card .edit_inputs input {
 
   background-color: #fff;
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
-
   overflow: hidden
 }
 

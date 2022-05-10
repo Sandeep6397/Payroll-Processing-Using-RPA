@@ -70,13 +70,6 @@
                       </a>
                     </li>
 
-                    <li class="sidebar_icon" id="sidebar_icon_pay">
-                      <a href="#">
-                        <span class="icon"><i class="fa-solid fa-money-check-dollar"></i></span>
-                        <span class="item">Pay Salary </span>
-                      </a>
-                    </li>
-
                     <li class="sidebar_icon" id="sidebar_icon_add_remove">
                       <a href="#">
                         <span class="icon"><i class="fa-solid fa-user-xmark"></i></span>
@@ -84,13 +77,32 @@
                       </a>
                     </li>
 
+                    <li class="sidebar_icon" id="sidebar_icon_pay">
+                      <a href="#">
+                        <span class="icon"><i class="fa-solid fa-money-check-dollar"></i></span>
+                        <span class="item">Pay Salary </span>
+                      </a>
+                    </li>
+
+                    <li class="sidebar_icon" id="sidebar_icon_update_salary">
+                      <a href="#">
+                        <span class="icon"><i class="fa-solid fa-file-pen"></i></span>
+                        <span class="item">Update Salary </span>
+                      </a>
+                    </li>
+                    
+
+                    
+
                     <li class="sidebar_icon" id="sidebar_icon_password">
                       <a href="#">
                         <span class="icon"><i class="fa-solid fa-key"></i></i></span>
                         <span class="item">Manage Password </span>
                       </a>
                     </li>
+
                     
+
                     
                   </ul>
                 </div>
@@ -253,10 +265,10 @@
                                               <div style="text-align: center; font-size: 30px; padding-top: 15px; font-family: Open Sans;">Sick Leave/Casual Leave</div>
                                             </div>
                                             <div class="pie_content">
-                                              <div class="pie animate" style="--p:100;--c:orange;"> 6.00</div>
+                                              <div class="pie animate" style="--p:100;--c:orange;"> 12.00</div>
                                               <div class="pie_inner_content">
                                                 
-                                                <div>Days remaining from 01 Mar 2022 to 31 Dec 2022 entitlement of <span class="days">6.00 Days</span></div>
+                                                <div>Days remaining from 01 Mar 2022 to 31 Dec 2022 entitlement of <span class="days">12.00 Days</span></div>
                                     
                                               </div>
                                             </div>
@@ -943,6 +955,57 @@
                     </section>
 
 
+                    <section id= "update_salary_content" style="display: none;">
+                      <div class="edit_container">
+                        <div class="edit_card">
+                            <div class="edit_info"> 
+                              <div  class="profile_title" style="font-size: large ; padding-left: 20px; font-weight: 1000;">Update Salary</div> 
+                              
+                            </div>
+                            <div class="edit_forms">
+                              
+                              <div class="first_row_bank_appove">
+
+                                <form id="form_password_reset" action="">
+                                  <div class="password_container">
+                                    <h1>Update Salary</h1>
+                                    <div class="password_reset_row">
+                                      <i class="fas fa-user"></i>
+                                       <input id="salary_empid" name="salary_empid"  type="text" placeholder="Enter Employee ID" >
+                                       <div class="error" id="update_salary_error"></div>
+                                     </div>
+
+                                     <div class="password_reset_row">
+                                      <i class="fa-solid fa-file-pen"></i>
+                                        <input id="new_salary" name="new_salary"  type="number" placeholder="Enter updated Salary" >
+                                        <div class="error" id="new_salary_error"></div>
+                                    </div>
+
+                                  
+
+                                    <div class="password_reset_button">
+                                      
+                                      <button id="button_password_submit" style="border: 1px solid #4bc970; background-color: #4bc970;" onclick="update_salary()"> Update </button>
+                                      
+                                    </div>
+
+                                  </div >
+                                  
+                                 
+                                </form>
+  
+                              </div>
+                              
+                                
+                            </div>
+                                
+                                
+                          </div>
+                      </div>
+                    </section>
+
+
+
 
 
                     
@@ -978,6 +1041,7 @@
       document.getElementById("add_remove_content").style.display = "none";
       document.getElementById("pay_salary_content").style.display = "none";
       document.getElementById("manage_password_content").style.display = "none";
+      document.getElementById("update_salary_content").style.display = "none";
       document.getElementById("aboutMe_content").style.display="contents";
       
       
@@ -1112,6 +1176,7 @@
                   document.getElementById("pay_salary_content").style.display = "none";
                   document.getElementById("approve_atendence_request").style.display = "none";
                   document.getElementById("manage_password_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "none";
                   document.getElementById("aboutMe_content").style.display = "contents";
 
                 }
@@ -1135,6 +1200,7 @@
                   document.getElementById("add_remove_content").style.display = "none";
                   document.getElementById("pay_salary_content").style.display = "none";
                   document.getElementById("manage_password_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "none";
                   document.getElementById("myPay_content").style.display = "contents";
 
                 }
@@ -1157,6 +1223,7 @@
                   document.getElementById("approve_atendence_request").style.display = "none";
                   document.getElementById("pay_salary_content").style.display = "none";
                   document.getElementById("manage_password_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "none";
                   document.getElementById("attendence_content").style.display = "contents";
 
                 }
@@ -1179,6 +1246,7 @@
                   document.getElementById("approve_atendence_request").style.display = "none";
                   document.getElementById("pay_salary_content").style.display = "none";
                   document.getElementById("manage_password_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "none";
                   document.getElementById("myTime_content").style.display = "contents";
                 }
                 else
@@ -1202,6 +1270,7 @@
                   document.getElementById("approve_atendence_request").style.display = "none";
                   document.getElementById("pay_salary_content").style.display = "none";
                   document.getElementById("manage_password_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "none";
                   document.getElementById("bank_content").style.display = "contents";
                 }
                 else
@@ -1226,6 +1295,7 @@
                   document.getElementById("approve_atendence_request").style.display = "none";
                   document.getElementById("pay_salary_content").style.display = "none";
                   document.getElementById("manage_password_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "none";
                   document.getElementById("request_content").style.display = "contents";
 
                 }
@@ -1250,6 +1320,7 @@
                   document.getElementById("approve_atendence_request").style.display = "none";
                   document.getElementById("pay_salary_content").style.display = "none";
                   document.getElementById("manage_password_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "none";
                   document.getElementById("add_remove_content").style.display = "contents";
                   
                 }
@@ -1274,6 +1345,7 @@
                   document.getElementById("approve_atendence_request").style.display = "none"
                   document.getElementById("add_remove_content").style.display = "none";
                   document.getElementById("manage_password_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "none";
                   document.getElementById("pay_salary_content").style.display = "contents";
                 }
                 else
@@ -1297,7 +1369,33 @@
                   document.getElementById("approve_atendence_request").style.display = "none"
                   document.getElementById("add_remove_content").style.display = "none";
                   document.getElementById("pay_salary_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "none";
                   document.getElementById("manage_password_content").style.display = "contents";
+                  
+                }
+                else
+                {
+                  window.alert("Save the updated deatils!")
+                }
+                 
+                
+              }
+
+              if(selected[0].id == "sidebar_icon_update_salary" )
+              {
+                if(editStatus == false && bank_edit_status == false)
+                {
+                  document.getElementById("aboutMe_content").style.display = "none";
+                  document.getElementById("myPay_content").style.display = "none";
+                  document.getElementById("attendence_content").style.display = "none";
+                  document.getElementById("myTime_content").style.display = "none";
+                  document.getElementById("bank_content").style.display = "none";
+                  document.getElementById("request_content").style.display = "none";
+                  document.getElementById("approve_atendence_request").style.display = "none"
+                  document.getElementById("add_remove_content").style.display = "none";
+                  document.getElementById("pay_salary_content").style.display = "none";
+                  document.getElementById("manage_password_content").style.display = "none";
+                  document.getElementById("update_salary_content").style.display = "contents";
                   
                 }
                 else
@@ -1695,6 +1793,38 @@
           document.getElementById("confirm_remove_error").innerHTML = ""
          
         }
+
+        const emp_salary = document.getElementById("salary_empid");
+        const amount = document.getElementById("new_salary");
+        function update_salary() {
+          validateUpdateInfo()
+        }
+
+        const validateUpdateInfo = () => {
+          const eid = emp_salary.value.trim();
+          const amt = amount.value.trim(); 
+         
+          
+          if(eid == "" ){
+            document.getElementById("update_salary_error").innerHTML = "Enter Employee ID"
+          }
+          else{
+            document.getElementById("update_salary_error").innerHTML = ""
+          }
+
+          if(amt == ""){
+            document.getElementById("new_salary_error").innerHTML = "Enetr amount"
+          }
+          else{
+            document.getElementById("new_salary_error").innerHTML = ""
+          }
+
+         
+          
+
+        }
+
+      
 
         //Remove employee
 
